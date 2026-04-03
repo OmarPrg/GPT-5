@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { RiMenu3Fill , RiCloseLine } from "react-icons/ri";
+import { motion, AnimatePresence } from 'framer-motion';
 
 import logo from '../../assets/GPT-3.svg'
 import './Navbar.css'
@@ -26,7 +27,12 @@ const Navbar = () => {
      const [isToggle, setToggle]=useState<boolean>(false);
 
   return (
-    <div className=' Navbar'>
+    <motion.div 
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className=' Navbar'
+    >
       <div className="Navbar__logo ">
         <img src={logo} alt="gpt" />  
       </div>
@@ -37,19 +43,26 @@ const Navbar = () => {
            <NavLinks/>
            <Signs/>
      </div>
-     {isToggle && (
-        <div className="Navbar__menu_container scale-up-center">
-          <div className="Navbar__menu_container-links">
-             {/* We reuse your components here! */}
-             <NavLinks />
-             <div className="Navbar__menu_container-links-sign">
-                <Signs />
+     <AnimatePresence>
+        {isToggle && (
+           <motion.div 
+            initial={{ opacity: 0, scale: 0.75, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.75, y: -20 }}
+            className="Navbar__menu_container"
+           >
+             <div className="Navbar__menu_container-links">
+                {/* We reuse your components here! */}
+                <NavLinks />
+                <div className="Navbar__menu_container-links-sign">
+                   <Signs />
+                </div>
              </div>
-          </div>
-        </div>
-      )}
+           </motion.div>
+         )}
+      </AnimatePresence>
         
-    </div>
+    </motion.div>
   )
 }
 
