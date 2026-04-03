@@ -15,7 +15,7 @@ const Blog_Card=({image , date , paragraph}:{image:string , date:string , paragr
            }}
            className="BlogCard"
          >
-            <img src={image} alt="" />
+            <img src={image} alt="" loading="lazy" />
             <div className="BlogCard__Content">
              <div>
                <div className="BlogCard__Content__Date">

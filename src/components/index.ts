@@ -8,3 +8,4 @@
  export {default as GetStart} from './getstart/GetStart';
  export {default as Blog} from './blog/Blog'
  export {default as ScrollToTop} from './scrolltotop/ScrollToTop'
+ export {default as Loading} from './loading/Loading'

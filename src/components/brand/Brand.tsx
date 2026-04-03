@@ -31,11 +31,11 @@ const Brand = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
     >
-      <motion.img variants={itemVariants} src={google} alt="google" />
-      <motion.img variants={itemVariants} src={slack} alt="slack" />
-      <motion.img variants={itemVariants} src={atlassian} alt="atlassian" />
-      <motion.img variants={itemVariants} src={dropbox} alt="dropbox" />
-      <motion.img variants={itemVariants} src={shopify} alt="shopify" />
+      <motion.img variants={itemVariants} src={google} alt="google" loading="lazy" />
+      <motion.img variants={itemVariants} src={slack} alt="slack" loading="lazy" />
+      <motion.img variants={itemVariants} src={atlassian} alt="atlassian" loading="lazy" />
+      <motion.img variants={itemVariants} src={dropbox} alt="dropbox" loading="lazy" />
+      <motion.img variants={itemVariants} src={shopify} alt="shopify" loading="lazy" />
     </motion.div>
   )
 }

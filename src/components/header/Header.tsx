@@ -48,7 +48,7 @@ const Header = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="Header__Content__People"
         >
-           <img src={peopleImage} alt="People" />
+           <img src={peopleImage} alt="People" loading="lazy" />
            <p>1,600 people requested access a visit in last 24 hours</p>
         </motion.div>
       </motion.div>
